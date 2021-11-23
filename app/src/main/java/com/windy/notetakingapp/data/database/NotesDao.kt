@@ -16,7 +16,7 @@ interface NotesDao {
     @Update
     fun updateData(notes:Notes)
 
-    @Query(Constant.GET_ALL_NOTES)
+    @Query("SELECT * FROM Notes")
     fun getAllNotes():List<Notes>
 
 }
