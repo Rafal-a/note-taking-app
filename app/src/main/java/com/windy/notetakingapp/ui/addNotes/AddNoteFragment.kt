@@ -1,4 +1,4 @@
-package com.windy.notetakingapp.ui
+package com.windy.notetakingapp.ui.addNotes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
