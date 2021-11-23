@@ -1,4 +1,5 @@
-package com.windy.notetakingapp.data.database
+package com.windy.notetakingapp.data
+
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
