@@ -3,20 +3,23 @@ package com.windy.notetakingapp.data.database
 import androidx.room.*
 import com.windy.notetakingapp.data.Notes
 import com.windy.notetakingapp.utils.Constant
+import io.reactivex.rxjava3.core.Completable
+import io.reactivex.rxjava3.core.Observable
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface NotesDao {
 
     @Insert
-    fun insetData(notes: Notes)
+    suspend fun insetData(notes: Notes)
 
     @Delete
-    fun deleteData(notes:Notes)
+    suspend fun deleteData(notes:Notes)
 
     @Update
-    fun updateData(notes:Notes)
+    suspend fun updateData(notes:Notes)
 
-    @Query("SELECT * FROM Notes")
-    fun getAllNotes():List<Notes>
+    @Query("SELECT * FROM Notes ORDER BY id DESC")
+     fun getAllNotes():Flow<List<Notes>>
 
 }
